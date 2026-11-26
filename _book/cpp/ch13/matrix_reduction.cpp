@@ -31,7 +31,7 @@ void toggle(Matrix& matrix, int r1, int r2, int c1, int c2) {
           c2 < static_cast<int>(matrix.front().size()))) {
         throw std::invalid_argument("invalid rectangle");
     }
-    for (const auto [row, column] :
+    for (const auto& [row, column] :
          {std::pair{r1, c1}, {r1, c2}, {r2, c1}, {r2, c2}}) {
         matrix[static_cast<std::size_t>(row)]
               [static_cast<std::size_t>(column)] ^= 1;
